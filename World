@@ -1,0 +1,103 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Instructions here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Instructions extends World
+{
+
+    /**
+     * Constructor for objects of class Instructions.
+     * 
+     */
+    public Instructions()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1, false); 
+        prepare();
+    }
+    // adds all of the objects to the world
+    public void prepare() 
+    {
+        addObject(new Rules(), 300, 220);
+        addObject(new Back(), 30, 30);
+    }
+}
+
+/**
+ * Write a description of class Menu here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Menu extends World
+{
+
+    /**
+     * Constructor for objects of class Menu.
+     * 
+     */
+    public Menu()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1, false);
+        setPaintOrder(Title.class, StartButton.class, InstructionButton.class);
+        prepare();
+    }
+    // adds all of the objects to the world
+    public void prepare() 
+    {
+        addObject(new StartButton(), 300, 245);
+        addObject(new InstructionButton(), 300, 325);
+        addObject(new Title(), 300, 105);
+        
+    }
+    }
+    
+    /**
+ * Write a description of class MyWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MyWorld extends World
+{
+    Score counter = new Score();
+    Back back1 = new Back();
+    Pause pause1 = new Pause();
+    /**
+     * Constructor for objects of class MyWorld.
+     * 
+     */
+    public MyWorld()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 400, 1); 
+        addObject(new Fish(), 400, 300);
+        addObject(new Dolphin(), 500, 0);
+        setPaintOrder(Back.class, Pause.class, Sound.class, Score.class, GameOver.class);
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        addObject(pause1, 18, 377);
+        addObject(counter, 545, 385);
+        addObject(back1, 30, 30);
+    }
+}
+    
+    
+    
+    
+
+
+
+
